@@ -46,6 +46,13 @@ $path="/logIps/img/thumbUser/"
                             <span>Geral</span>
                         </li>
                         <li class="sidebar-dropdown">
+                            <a href="../dasboard/index.html">
+                                <i class="fab fa-buromobelexperte"></i>
+                                <span class="menu-text">dashboard</span>
+                                <span class="badge badge-pill badge-warning">New</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-dropdown">
                             <a href="indexWhatsapp.php">
                                 <i class="fab fa-whatsapp"></i>
                                 <span class="menu-text">whatsapp</span>
