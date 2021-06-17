@@ -46,9 +46,16 @@ $path="/logIps/img/thumbUser/"
                             <span>Geral</span>
                         </li>
                         <li class="sidebar-dropdown">
-                            <a href="../dasboard/index.html">
+                            <a href="http://localhost/logIps/dasboard/index2.html">
                                 <i class="fab fa-buromobelexperte"></i>
                                 <span class="menu-text">dashboard</span>
+                                <span class="badge badge-pill badge-warning">New</span>
+                            </a>
+                        </li>
+                               <li class="sidebar-dropdown">
+                            <a href="http://localhost/logIps/processos/index.php">
+                                <i class="fab fa-buromobelexperte"></i>
+                                <span class="menu-text">Processo</span>
                                 <span class="badge badge-pill badge-warning">New</span>
                             </a>
                         </li>

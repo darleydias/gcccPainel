@@ -1,53 +1,90 @@
 <!DOCTYPE html>
 <?php
-          $target_dir = "uploads/";
-          $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-          $uploadOk = 1;
-          $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$ultimoIdIp="";
+$usuario=1096841;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $processo=$_POST["codProcess"];
+}
+//$processo="656565red879";
 
-          // Check if image file is a actual image or fake image
-          if(isset($_POST["submit"])) {
-            $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-            if($check !== false) {
-              echo "o arquivo é um texto - " . $check["mime"] . ".";
-              $uploadOk = 1;
-            } else {
-              echo "O arquivo não é uma texto.";
-              $uploadOk = 0;
-            }
-          }
+$conn = mysqli_connect("localhost", "darley", "yhvh77", "gccc");
+if (!$conn) {
+    echo "Error: Falha ao conectar-se com o banco de dados MySQL." . PHP_EOL;
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    exit;
+}
 
-          // Check if file already exists
-          if (file_exists($target_file)) {
-            echo "O arquivo não existe";
-            $uploadOk = 0;
-          }
+$query = "select * from tb_ip";
+$result=mysqli_query($conn,$query);
 
-          // Check file size
-          if ($_FILES["fileToUpload"]["size"] > 500000) {
-            echo "Sorry, your file is too large.";
-            $uploadOk = 0;
-          }
-
-          // Allow certain file formats
-          if($imageFileType != "txt" && $imageFileType != "doc" && $imageFileType != "docx"
-          && $imageFileType != "pdf" ) {
-            echo "Desculpe, somente txt,doc,docx e pdf so aceitos.";
-            $uploadOk = 0;
-          }
-
-          // Check if $uploadOk is set to 0 by an error
-          if ($uploadOk == 0) {
-            echo "Arquivo não foi enviado.";
-          // if everything is ok, try to upload file
-          } else {
-            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-              echo "O arquivo ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " Subiu.";
-            } else {
-              echo "Erro ao subir o arquivo.";
-            }
-          }
-          ?> 
+$dados = array();
+$ip=array();
+$dh=array();
+// Pasta onde o arquivo vai ser salvo
+$_UP['pasta'] = 'uploads/';
+ 
+// Tamanho máximo do arquivo (em Bytes)
+$_UP['tamanho'] = 1024 * 1024 * 2; // 2Mb
+ 
+// Array com as extensões permitidas
+$_UP['extensoes'] = array('txt', 'pdf', 'docx');
+ 
+// Renomeia o arquivo? (Se true, o arquivo será salvo como .jpg e um nome único)
+$_UP['renomeia'] = false;
+ 
+// Array com os tipos de erros de upload do PHP
+$_UP['erros'][0] = 'Não houve erro';
+$_UP['erros'][1] = 'O arquivo no upload é maior do que o limite do PHP';
+$_UP['erros'][2] = 'O arquivo ultrapassa o limite de tamanho especifiado no HTML';
+$_UP['erros'][3] = 'O upload do arquivo foi feito parcialmente';
+$_UP['erros'][4] = 'Não foi feito o upload do arquivo';
+ 
+// Verifica se houve algum erro com o upload. Se sim, exibe a mensagem do erro
+if ($_FILES['arquivo']['error'] != 0) {
+die("Não foi possível fazer o upload, erro:<br />" . $_UP['erros'][$_FILES['arquivo']['error']]);
+exit; // Para a execução do script
+}
+ 
+// Caso script chegue a esse ponto, não houve erro com o upload e o PHP pode continuar
+ 
+// Faz a verificação da extensão do arquivo
+$temp = explode('.', $_FILES['arquivo']['name']);
+$extensao = strtolower(end($temp));
+if (array_search($extensao, $_UP['extensoes']) === false) {
+echo "Por favor, envie arquivos com as seguintes extensões: txt, docx ou pdf";
+}
+ 
+// Faz a verificação do tamanho do arquivo
+else if ($_UP['tamanho'] < $_FILES['arquivo']['size']) {
+echo "O arquivo enviado é muito grande, envie arquivos de até 2Mb.";
+}
+ 
+// O arquivo passou em todas as verificações, hora de tentar movê-lo para a pasta
+else {
+// Primeiro verifica se deve trocar o nome do arquivo
+if ($_UP['renomeia'] == true) {
+// Cria um nome baseado no UNIX TIMESTAMP atual e com extensão .txt
+$nome_final = time().'.txt';
+} else {
+// Mantém o nome original do arquivo
+$nome_final = $_FILES['arquivo']['name'];
+}
+ 
+// Depois verifica se é possível mover o arquivo para a pasta escolhida
+if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $_UP['pasta'] . $nome_final)) {
+        // Upload efetuado com sucesso, exibe uma mensagem e um link para o arquivo
+        $line="";
+        //echo "Upload efetuado com sucesso!";
+        //echo '<br /><a href="' . $_UP['pasta'] . $nome_final . '">Clique aqui para acessar o arquivo</a>';
+        $file_handle = fopen($_UP['pasta'] . $nome_final, "r");
+        echo($_UP['pasta'] . $nome_final);
+        while (!feof($file_handle)) {
+            $line = fgets($file_handle);
+            //array_push($dados,$line);
+            echo($line);
+        }
+fclose($file_handle);
+?>
           
 <html>
 <head>
@@ -62,27 +99,65 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="row" style="margin-left: 0">
-    <div class="col-md-12" style="margin-left: 0";>
-        <div class="container-fluid" style="margin-left: 0">
+
+<div class="col-md-12" style="margin-left: 200";>
+        <div class="container-fluid">
             <nav class="navbar navbar-light bg-light">
-                <div class="container">
+                <div class="container" style="margin-left:600px">
                     <a class="navbar-brand" href="#">
-                    <img src="images/logo.png" alt="" width="100" height="40" style="margin-right:5px">
-                        Sistema de Scripts
+                        Sistema de Scripts do Whatsapp
+
                     </a>
                 </div>
             </nav>
         </div>
     </div>
-</div>
 <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-3">
        <?php include_once("menu.php");?>
     </div>
 
-        <div class="col-md-10">
+        <div class="col-md-9">
+           <?php 
+                $tam=count($dados);
+                echo($tam);
+                $indice=$tam-1;
+                
+                // Fazer algo para cada linha
+                while($tam>0){
+                    //Pega cada linha
+                    //Pega IP
+                    preg_match("([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})", $dados[$indice], $ip_matches);
+                    //echo(preg_last_error());
+                    array_push($ip,$ip_matches[0]);
+                    $sqlTeste="select ip_ip from tb_ip where ip_ip ='".$ip_matches[0]."'";
+                    $resTeste=mysqli_query($conn,$sqlTeste);
+                    if(!mysqli_num_rows($resTeste)>0){
+                        //Grava IP
+                        $sql="insert into tb_ip (ip_codProcess,ip_usu,ip_ip) values ('".$processo."',".$usuario.",'".$ip_matches[0]."')";
+                        mysqli_query($conn,$sql);
+                        $ultimoIdIp = mysqli_insert_id($conn);
+                    }
+                    //grava data / Hora
+                    
+                    preg_match("([0-3][0-9]/[A-Z][a-z][a-z]/[1-2][0-9][0-9][0-9]:[0-2][0-9]:[0-5][0-9]:[0-5][0-9] -0300)",$dados[$tam],$match);
+                    $sqlInsertDh="insert into tb_dh (dh_idIp, dh_dh,dh_usu) values (".$ultimoIdIp.",'".$match[0]."','".$usuario."')";
+                    echo($sqlInsertDh);
+                    mysqli_query($conn,$sqlInsertDh);
+                    $tam=$tam-1;
+                }
+                } else {
+                    // Não foi possível fazer o upload, provavelmente a pasta está incorreta
+                    echo "Não foi possível enviar o arquivo, tente novamente";
+                }
+                
+                }
+                $sqlProcesso="SELECT ip_codProcess FROM tb_ip";
+                $resPro=mysqli_query($conn,$sqlProcesso);
+
+
            
+           ?>
         </div>
     </div>
 

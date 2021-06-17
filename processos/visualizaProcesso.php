@@ -13,8 +13,6 @@ if($_COOKIE['user']==''){
     <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/sidebar-themes.css">
-
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -22,274 +20,361 @@ if($_COOKIE['user']==''){
 <!-- Modal -->
 <?php include_once("corpoModal.php");?>
 <!-- Fim Modal -->
-    <div class="row">
-            <div class="col-md-12">
-                    <nav class="navbar navbar-light bg-light">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <a href="index.php" style="text-decoration: none;"><i class="fa fa-list-alt fa-3x" aria-hidden="true" style="margin-left:-300px;color: #1c1c0c;"></i></a>
-                                </div>
-                                <div class="col-md-10">
-                                <a class="navbar-brand" href="#">
-                                    Investigação Cibernética 
-                                </a>
-                                </div>
-                            </div>
+<div class="row align-items-center">
+    <div class="col-md-8"> 
+    <div class="container" style="margin-left:280px">
+            <nav class="navbar navbar-light bg-light">
+                    <div class="row align-items-center">
+                        <div class="col-md-2 ">
+                            <a href="index.php" style="text-decoration: none;">
+                                <i class="fa fa-list-alt fa-3x" aria-hidden="true" style="color: #1c1c0c;"></i>
+                            </a>
                         </div>
-                    </nav>
+                        <div class="col-md-10 mw-100">
+                            <p class="font-weight-bold text-uppercase">&nbsp;&nbsp;&nbsp;Investigação Cibernética</p> 
+                        </div>
+                    </div>
+
+            </nav>
+            <br>
+            <div class="row align-items-start justify-content-start">
+                <div class="col-md-2 "></div>
+                <div class="col-md-10"></div>
+                    <div>
+                        <i class="fas fa-square" style="color: #5CB85C;"></i>  Status atual &nbsp;&nbsp;&nbsp;<i class="fas fa-square" style="color: #FFA500;"></i> passou aqui
+                    </div>
                 </div>
+
             </div>
-    </div>
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-6">
-                            <div class="container">
-                                    <div style="margin-left:-100px">
-                                    <i class="fas fa-square" style="color: #5CB85C;"></i>  Status atual &nbsp;&nbsp;&nbsp;<i class="fas fa-square" style="color: #b8b85c;"></i> passou aqui
+            
+                                                            <!--SOLICITAR -->
+
+                <table  style="margin-left:300px;position:absolute;left:150px;top:130px;font-size:12px'">
+                    <tbody>
+                        <tr><td>Solicitante</td></tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="#" style="text-decoration: none;" data-toggle="modal" data-target="#solicitaModal" data-whatever="@getbootstrap">
+                                    <i class='fas fa-bullseye'></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <i id="seta1" class='fas fa-arrow-down'></i>
+                            </td>
+                        </tr>
+                    <tbody>
+                </table>
+
+                                            <!--COORDENADOR -->  
+                <table  style="margin-left:300px;position:absolute;left:80px;top:200px;font-size:12px'">
+                    <tbody>
+                        <tr style="">
+                            <td>
+                                <div class="card" style="width:200px">
+                                    <div class="card-header">
+                                        Coordenador
                                     </div>
-                            </div>
-       </div>
-        <div class="col-md-4"></div>
-    </div>
-    <div class="row">
-            <!-- Operacao Inicial -->
-            <div class="col-md-4"></div>
-            <div class="col-md-6" style="margin-left:600px">
-                <i style='font-size:22px;text-center;margin-left:140px'>Solicitante</i></br>
-                <a href="#" style="text-decoration: none;" data-toggle="modal" data-target="#solicitaModal" data-whatever="@getbootstrap">
-                <i class='fas fa-bullseye' style='font-size:24px;margin-left:180px'></a></i><br>
-                <i id="seta1" class='fas fa-arrow-down' style='font-size:24px;margin-left:180px'></i>
-            </div>
-    </div>
-    <div class="row">
-            <!--  -->
-            <!-- Analise do coordenador -->
-            <div class="col-md-4"></div>
-            <div class="col-md-6" style="margin-left:500px">
-                <div class="card" style="width: 18rem; margin-left:150px">
-                    <div class="card-header">
-                        Coordenador
-                    </div>
-                    <div class="card-body text-white bg-success mb-3 text-center">
-                        <h5 class="card-title">Analisar Demanda</h5>
-                        <p class="card-text"></p>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
-                        Ver mais
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 align-self-center" style="margin-left:-820px"> 
-            <i id="seta2" class='fas fa-arrow-left' style='font-size:24px;color: #5CB85C;'> 1 </i></div>
-    </div>
+                                    <div class="card-body text-white bg-success mb-3 text-center">
+                                        <h5 class="card-title">Analisar Demanda</h5>
+                                        <p class="card-text"></p>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+                                        Ver mais
+                                        </button>
+                                    </div>
+                                
+                                </div>
+                            </td>
+                             <td>
+                                    <div class="card-body">
+                                    <i id="seta2" class='fas fa-arrow-left' style='margin-left:-10px;padding-left:0;color: #5CB85C;'> <div style='position: absolute;left:230px;top:96px;font-size:16px;color: #5CB85C'>1</div> </i>
+                                    
+                            </td>
+                        </tr>
+                       
+                    <tbody>
+                </table>
+                                                <!--SETA DOW --> 
+
+                <table  style="margin-left:300px;position:absolute;left:95px;top:200px;font-size:12px'">
+                    <tr>
+                        <td>
+                        <i id="seta3" class='fas fa-arrow-down' style='position:absolute;left:80px;top:175px'></i>
+                        </td>
+                    </tr>
+                </table>
+
+                                            <!--GATEWAY --> 
+
+                <table  style="margin-left:300px;position:absolute;left:0px;top:400px;font-size:12px'">
+                    <tr>
+                        <td>
+                        É competencia <br>da COERCIBER?
+                        </td>
+                        <td>
+                        <img src="../images/gateway.png" width="80" style="position: absolute;left:140px;top:-10px" />
+                        </td>
+                        <td>
+                        
+                        <i id="seta4" class='fas fa-arrow-right' style='position: absolute;left:220px;top:25px;color:#b85c5c'></i>
+                        </td>
+                        <td>
+                        <i class="fas fa-envelope-open fa-2x" style='position: absolute;left:250px;top:20px;font-size:24px;color:#b85c5c'></i>
+                        <!--i class="fa fa-circle" aria-hidden="true" style='position: absolute;left:250px;top:20px;font-size:24px;color:#b85c5c'></i-->
+                        </td>
+                        <td>
+                        <i id="seta5" class='fas fa-arrow-up' style='position: absolute;left:400px;top:0px;font-size:16px;color: #5CB85C'>
+                        <div style='position: absolute;left:20px;top:0px;font-size:16px;color: #5CB85C'> 1 </div> </i><!-- Seta UP-->
+                        </td>
+                        
+                    </tr>
+                    
+                </table>   
+                <!-- segundo gateway-->
+                                                <!--SETA DOW --> 
+
+                <table  style="margin-left:300px;position:absolute;left:95px;top:300px;font-size:12px'">
+                    <tr>
+                        <td>
+                        <i id="seta31" class='fas fa-arrow-down' style='position:absolute;left:80px;top:175px;color:#5CB85C'></i>
+                        </td>
+                    </tr>
+                </table>
+
+                                            <!--GATEWAY --> 
+
+                <table  style="margin-left:300px;position:absolute;left:0px;top:500px;font-size:12px'">
+                    <tr>
+                        <td>
+                        Necessita dados<br> complemetares?
+                        </td>
+                        <td>
+                        <img src="../images/gateway.png" width="80" style="position: absolute;left:140px;top:-10px" />
+                        </td>
+                        <td>
+                        <img src="../images/setaVdDir.png" width="60" style="position: absolute;left:220px;top:20px;color:#5CB85C">
+                        <!--i id="seta41" class='fas fa-arrow-right' style='position: absolute;left:220px;top:25px;color:#5CB85C'></i-->
+                        </td>
+                        <td>
+                                <div class="card bg-warning mb-3" style="width:290px;position: absolute;left:280px;top:-60px;">
+                                    <div class="card-header">
+                                        Solicitante &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-circle-notch" > 2 </i>
+                                    </div>
+                                    <div class="card-body text-primary text-center">
+                                        <h5 class="card-title">Fornecer dados Complementares</h5>
+                                        <p class="card-text"></p>
+                                        <!-- <a href="#" class="btn btn-primary">Ver mais</a> -->
+                                    </div>
+                                </div>
+                        </td>
+                    </tr>
+                    
+                </table>   
+                
+                <table  style="margin-left:300px;position:absolute;left:173px;top:570px;font-size:12px'">
+                    <tr>
+                        <td>
+                         <i id="seta19" class='fas fa-arrow-down' style='color: #b85c5c'></i><!-- seta down-->
+                        </td>
+                    </tr>
+                </table>   
+                <table  style="margin-left:300px;position:absolute;left:0px;top:600px;font-size:12px'">
+                    <tr>
+                        <td>
+                        <div class="card -success mb-3" style="width: 18rem;">
+                                    <div class="card-header">
+                                        Assessoria jurídica
+                                    </div>
+                                    <div class="card-body text-primary text-center">
+                                        <h5 class="card-title">Fazer análise preliminar</h5>
+                                        <p class="card-text"></p>
+                                        <!-- <a href="#" class="btn btn-primary">Ver mais</a> -->
+                                    </div>
+                                </div>
+                        </td>
+                        <td>
+                        <i id="seta22" class='fas fa-arrow-left' style='position:absolute;left:300px;top:80px;color: #5CB85C;'> </i>
+                        </td>
+                    </tr>
+                </table>   
+                <table  style="margin-left:300px;position:absolute;left:173px;top:710px;'">
+                    <tr>
+                        <td>
+                         <i id="seta9" class='fas fa-arrow-down'></i><!-- seta down-->
+                        </td>
+                    </tr>
+                </table>   
+
+                                            <!--  TERCEIRO E QUARTO GATEWAY-->
+
                
-    <div class="row align-items-start justify-content-start ">
-        <div class="col-md-4"></div>
-        <div class="col-md-6">
-        <i id="seta3" class='fas fa-arrow-down' style='font-size:24px'></i>
-        </div>
-    </div>
-    <div class="row align-items-center justify-content-start">
-        <div class="col-md-4"></div>
-        <div class="col-md-6">
-            <!-- É competencia da coeciber-->
-            <div class="row align-items-center">
-                <div class="col-md-2"> <img src="../images/gateway.png" width="80" style="margin-left:-30px"/></div><!-- Losango-->
-                <div class="col-md-2" style="margin-left:-420px">É competencia da coeciber!</div>
-                <div class="col-md-2"><i id="seta4" class='fas fa-arrow-right' style='font-size:24px;margin-left:50px;color:#b85c5c'></i></div>
-                <div class="col-md-2"><i class="fa fa-circle" aria-hidden="true" style='font-size:24px;margin-left:-120px;color:#b85c5c'></i></div>
-                <div class="col-md-2" style="margin-left:-300px">Fim <br>Resposta <br>Demandante</div>
-                <div class="col-md-2"></div>
+                <table  style="margin-left:300px;position:absolute;left:0px;top:750px;font-size:12px'">
+                    <tr>
+                        <td>
+                        <i style="position: absolute;left:0px;top:0px">Há necessidade de apoio operacional?</i>
+                        </td>
+                        <td>
+                        <img src="../images/gateway.png" width="80" style="position: absolute;left:140px;top:-15px" />
+                        </td>
+                        <td>
+                        <div class="card" style="width: 18rem;position:absolute;left:320px;top:-80px;">
+                                <div class="card-header">
+                                    Assessoria operacional
+                                </div>
+                                <div class="card-body text-primary text-center">
+                                    <h5 class="card-title">Produzir Análise e informações iniciais</h5>
+                                    <p class="card-text"></p>
+                                    <!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+                                    Ver mais
+                                    </button-->
+                                </div>
+                        </div>    
+                        </td>
+                        <td>
+                            <img src="../images/setaVdDir.png" width="60" style='position: absolute;left:220px;top:20px;color:#5CB85C'>>
+                        </td>
+                    </tr>
+                    
+                </table>   
+                <!-- segundo gateway-->
+               
+                                            <!--GATEWAY --> 
+
+                <table  style="margin-left:300px;position:absolute;left:2px;top:875px;font-size:12px'">
+                    <tr>
+                        <td>
+                        <i style="position:absolute;left:px;top:30px;width:100px;">Sugere-se PAAF?</i>
+                        </td>
+                        <td>
+                             <img src="../images/gateway.png" width="80" style="position:absolute;left:140px;top:0px" />
+                        </td>
+                        <td>
+                        <img src="../images/setaVdDir.png" width="60" style='position: absolute;left:220px;top:25px;color:#5CB85C'>
+                        <!--i id="seta43" class='fas fa-arrow-right' style='position: absolute;left:220px;top:25px;color:#5CB85C'></i-->
+                        </td>
+                        <td>
+                                <div class="card " style="width:290px;position: absolute;left:310px;top:-10px;">
+                                    <div class="card-header">
+                                        Coordenador 
+                                    </div>
+                                    <div class="card-body text-primary text-center">
+                                        <h5 class="card-title">Analisar a possibilidade de instaurar PAAF</h5>
+                                        <p class="card-text"></p>
+                                        <!-- <a href="#" class="btn btn-primary">Ver mais</a> -->
+                                    </div>
+                                </div>
+                        </td>
+                    </tr>
+                    
+                </table>   
                 
-
-            </div>
-        </div>
-    </div>
-        <div class="row align-items-start justify-content-start">
-        <div class="col-md-4"></div>
-        <div class="col-md-6">
-        <i id="seta5" class='fas fa-arrow-down' style='font-size:24px;color: #5CB85C'></i>
-        <i id="seta6" class='fas fa-arrow-up' style='font-size:24px;color: #5CB85C;margin-left:300px'> 1</i>
-        </div> 
-    </div>
-   
-    <div class="row align-items-center justify-content-start">
-        <div class="col-md-4"></div>
-        <div class="col-md-6">
-            <!-- Necessita dados complemetares?-->
-            <div class="row align-items-center">
-                <div class="col-md-2"> <img src="../images/gateway.png" width="80" style="margin-left:-30px"/></div><!-- Losango-->
-                <div class="col-md-2" style="margin-left:-420px">Necessita dados complemetares?</div>
-                <div class="col-md-2"><i id="seta7" class='fas fa-arrow-right' style='font-size:24px;margin-left:50px;color:#5CB85C'></i></div>
-                <div class="col-md-2">
-                    <div class="card bg-warning mb-3" style="width: 18rem;">
-                        <div class="card-header">
-                            Solicitante &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-circle-notch" > 2 </i>
-                        </div>
-                        <div class="card-body text-primary text-center">
-                            <h5 class="card-title">Fornecer dados Complementares</h5>
-                            <p class="card-text"></p>
-                            <!-- <a href="#" class="btn btn-primary">Ver mais</a> -->
-                        </div>
-                    </div>    
-                
-                </div>
-                <div class="col-md-2" style="margin-left:-300px"></div>
-                <div class="col-md-2"></div>
-            </div>
-        </div>
-    </div>
-        <div class="row align-items-start justify-content-start">
-        <div class="col-md-4"></div>
-        <div class="col-md-6">
-
-        </div> 
-    </div>
-
-    <div class="row align-items-start">
-            <!-- solicitação de dados complementares -->
-            <div class="col-md-2"></div>
-            <div class="col-md-6" style="margin-left:300px">
-                    <div class="card border-success mb-3" style="width: 18rem;">
-                        <div class="card-header">
-                            Assessoria jurídica
-                        </div>
-                        <div class="card-body text-primary text-center">
-                            <h5 class="card-title">Fazer análise preliminar</h5>
-                            <p class="card-text"></p>
-                            <!-- <a href="#" class="btn btn-primary">Ver mais</a> -->
-                        </div>
-                    </div>
-            </div>
-            <div class="col-md-2 align-self-center"> 
-            <i id="seta2b" class='fas fa-arrow-left' style='font-size:24px;color: #5CB85C;margin-left:-980px'> 2 </i></div>
-            <!-- -->
-</div>
-
-<!-- Gateway 3 e 4 -->
-
-    <div class="row align-items-start justify-content-start ">
-        <div class="col-md-4"></div>
-        <div class="col-md-6">
-        <i id="seta9" class='fas fa-arrow-down' style='font-size:24px'></i>
-        <i id="seta12" class='fas fa-arrow-up' style='font-size:24px;color: #5CB85C;margin-left:300px'> 2</i>
-        </div> 
-        <div class="col-md-2"></div>
-    </div>
-    <div class="row align-items-center justify-content-start">
-        <div class="col-md-4"></div>
-        <div class="col-md-6">
-            <!-- Necessidade de apoio operacional-->
-            <div class="row align-items-center">
-                <div class="col-md-2"> <img src="../images/gateway.png" width="80" style="margin-left:-30px"/></div><!-- Losango-->
-                <div class="col-md-2" style="margin-left:-420px">Há necessidade <br>de apoio operacional?</div>
-                <div class="col-md-2"><i id="seta10" class='fas fa-arrow-right' style='font-size:24px;margin-left:50px;color:#5CB85C'></i></div>
-                <div class="col-md-2">
-            </div>
-                <div class="col-md-2" style="margin-left:-300px">
-                <div class="card" style="width: 18rem; margin-left:95px">
-                    <div class="card-header">
-                        Assessoria operacional
-                    </div>
-                    <div class="card-body text-primary text-center">
-                        <h5 class="card-title">Produzir Análise e informações iniciais</h5>
-                        <p class="card-text"></p>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
-                        Ver mais
-                        </button>
-                    </div>
-                </div>
-                
-                </div>
-                <div class="col-md-2"></div>
-                
-
-            </div>
-        </div>
-    </div>
-        <div class="row align-items-start justify-content-start">
-        <div class="col-md-4"></div>
-        <div class="col-md-6">
-        <i id="seta11" class='fas fa-arrow-down' style='font-size:24px;color: #b85c5c'></i>
-       
-        </div> 
-    </div>
-   
-    <div class="row align-items-center justify-content-start">
-        <div class="col-md-4"></div>
-        <div class="col-md-6">
-            <!-- Necessita dados complemetares?-->
-            <div class="row align-items-center">
-                <div class="col-md-2"> <img src="../images/gateway.png" width="80" style="margin-left:-30px"/></div><!-- Losango-->
-                <div class="col-md-2" style="margin-left:-420px">Sugere-se instaurar PAAF?</div>
-                <div class="col-md-2"><i id="seta13" class='fas fa-arrow-right' style='font-size:24px;margin-left:50px;color:#5CB85C'></i></div>
-                <div class="col-md-2">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-header">
-                            Coordenador
-                        </div>
-                        <div class="card-body text-primary text-center">
-                            <h5 class="card-title">Analisar Instauração de PAAF</h5>
-                            <p class="card-text"></p>
-                            <!-- <a href="#" class="btn btn-primary">Ver mais</a> -->
-                        </div>
-                    </div>    
-                
-                </div>
-                <div class="col-md-2" style="margin-left:-300px"></div>
-                <div class="col-md-2"></div>
-            </div>
-        </div>
-    </div>
-    <div class="row align-items-start justify-content-start">
-            <div class="col-md-4"></div>
-            <div class="col-md-6">
-                <i id="seta14" class='fas fa-arrow-down' style='font-size:24px;color: #b85c5c'></i>
-            </div> 
-            <div class="col-md-2"></div>
-        </div>
-    
-    <div class="row align-items-center justify-content-start">
-        <div class="col-md-2"></div>
-        <div class="col-md-6">
-                        <div class="card border-success mb-3" style="width: 18rem; margin-left:300px">
+                <table  style="margin-left:300px;position:absolute;left:173px;top:1000px;font-size:12px'">
+                    <tr>
+                        <td>
+                         <!--i id="seta21" class='fas fa-arrow-down' style='position:absolute;left:5px;top:-180px;color: #b85c5c'></i--><!-- seta down-->
+                         <img src="../images/setaBaixo.png" width="20" style='position:absolute;left:0px;top:-190px;color: #b85c5c'>
+                        </td>
+                    </tr>
+                </table>   
+                <table  style="margin-left:300px;position:absolute;left:173px;top:1150px;font-size:12px'">
+                    <tr>
+                        <td>
+                        <img src="../images/setaBaixo.png" width="20" style="position:absolute;left:0px;top:-190px;color: #b85c5c">
+                        </td>
+                    </tr>
+                </table>   
+                <table  style="position:absolute;left:0px;top:1040px;font-size:12px'">
+                    <tr>
+                        <td>
+                            <div class="card -success mb-3" style="width: 18rem; margin-left:300px">
                                 <div class="card-header">
                                             Assessoria Jurídica
                                 </div>
                                 <div class="card-body text-primary text-center">
-                                    <h5 class="card-title">Produzir relatório</h5>
+                                        <h5 class="card-title">Produzir relatório para solicitante</h5>
                                         <p class="card-text"></p>
                                         <img src="../images/relatorio.png" width="80"/>
                                 </div>
-                            
-                        </div>
-        </div>
-        <div class="col-md-4"></div>
-    </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>   
 
-    <div class="row align-items-start justify-content-start">
-        <div class="col-md-4"></div>
-        <div class="col-md-6">
-               
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-    <!-- fim Gateway 3 e 4 -->
+                
+                <table  style="margin-left:300px;position:absolute;left:173px;top:1260px;font-size:12px'">
+                    <tr>
+                        <td>
+                            <img src="../images/setaBaixo.png" width="20" style="position:absolute;left:0px;top:0px;color: #b85c5c">
+                        </td>
+                    </tr>
+                </table>   
 
+                <table  style="margin-left:300px;position:absolute;left:173px;top:1130px;font-size:12px'">
+                    <tr>
+                        <td>
+                             <i class="fas fa-envelope-open fa-2x" style='position: absolute;left:0px;top:200px;font-size:24px'></i>
+                             <!--i class="fa fa-circle" aria-hidden="true" style='position: absolute;left:0px;top:200px;font-size:24px;color:#b85c5c'></i-->
+                        </td>
+                    </tr>
+                </table>   
 
-</div>
-
-    <div conteiner="conteiner-fluid" style="margin-left:200px">
-        <div class="row">
-            <div class="col-md-12">
-                <?php include_once("../menu.php");?>
+                <table  style="margin-left:300px;position:absolute;left:0px;top:1200px;font-size:12px'">
+                    <tr>
+                        <td>
+                            <i id="seta29" class='fas fa-arrow-down' style='position:absolute;left:435px;top:-200px;color: #5CB85C;'> </i>
+                        </td>
+                        <td>
+                            <i style="position: absolute;left:300px;top:-160px">PAAF recomendado?</i>
+                        </td>
+                        <td>
+                            <img src="../images/gateway.png" width="80" style="position: absolute;left:400px;top:-180px" />
+                        </td>
+                        <td>
+                             <img src="../images/setaVdDir.png" width="60" style='position: absolute;left:480px;top:-145px;color:#5CB85C'/>
+                        </td>
+                        <td>
+                             <i class="fas fa-envelope-open fa-2x"  style='position: absolute;left:550px;top:-150px;down:200px'></i>
+                        </td>
+                        <td>
+                            <div class="card" style="width: 18rem;position:absolute;left:320px;top:-80px;">
+                                    <div class="card-header">
+                                        Assessoria Jurídica
+                                    </div>
+                                    <div class="card-body text-primary text-center">
+                                        <h5 class="card-title">Elaborar PAAF</h5>
+                                        <p class="card-text"></p>
+                                        <!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+                                        Ver mais
+                                        </button-->
+                                    </div>
+                            </div>    
+                        </td>
+                        <td>
+                        <i id="seta32" class='fas fa-arrow-down' style='position:absolute;left:435px;top:-100px;color: #5CB85C;'> </i>
+                        </td>
+                    </tr>
+                    
+                </table>   
             </div>
+            
         </div>
-    </div>
+        </div>
+        <br> <br> <br>
+                                                                <!-- MENU  -->
 
+            <div class="col-md-4"></div>
+                <div conteiner="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <?php 
+                            include_once("../menu.php");?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
